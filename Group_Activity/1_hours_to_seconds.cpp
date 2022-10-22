@@ -1,8 +1,7 @@
+//* Create a program that will convert hours to seconds *//
 #include <iostream>
 #include <math.h>
 using namespace std;
-
-//* Create a program that will convert hours to seconds *//
 
 int main() {
   int hours, seconds;

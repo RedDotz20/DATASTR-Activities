@@ -1,7 +1,6 @@
+//* Create a program that will ask for year of birth and it will calculate and display the age. *//
 #include <iostream>
 using namespace std;
-
-//* Create a program that will ask for year of birth and it will calculate and display the age. *//
 
 int main() {
   int birthYear, currentYear, age;

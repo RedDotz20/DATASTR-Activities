@@ -1,7 +1,7 @@
+//* Create a program that will calculate the distance travelled of a car. *//
+
 #include <iostream>
 using namespace std;
-
-//* Create a program that will calculate the distance travelled of a car. *//
 
 int main() {
   int distance, velocity, time;
