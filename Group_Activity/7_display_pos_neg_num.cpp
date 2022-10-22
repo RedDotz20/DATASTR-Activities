@@ -1,56 +1,57 @@
 #include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-  int arr[20], even[20], odd[20], i, j=0 , k=0, size;
+int main() {
+  int array[20],pos,neg,odd,even;
 
-  cout<<"Enter array size( Max:50 ): "; cin>>size;
-  cout<<"\nEnter array elements : \n";
-
-  for(i=0; i<size; i++) {
-    cout<<"\nEnter arr["<< i <<"] Element :: ";
-    cin>>arr[i];
+  for(int h = 0; h < 20; h++) {
+    cout << "insert Value " << h << ": ";
+    cin >> array[h];
   }
 
-  cout<<"\nStored Data in Array :: \n\n";
-
-  for( i=0; i < size; i++ ) {
-    cout<<" "<<arr[i]<<" ";
-  }
-
-  for( i=0; i < size; i++ ) {
-    if (arr[i] % 2 == 0) {
-    even[j]=arr[i]; j++;
-    } else {
-      odd[k]=arr[i]; k++;
-   }
-  }
-    
-  cout<<"\n\nPositive numbers are:";
-  for(i=0;i<size;i++)
-    if(arr[i]>0) {
-      cout<<arr[i]<<" ";
+  // Count Numbers
+  for(int i = 0; i < sizeof(array)/4; i++) {
+    if(array[i] < 0 && array[i] % 2 == 0) {
+      neg+1; even+1;
+    } else if(array[i] < 0 && array[i] % 2 != 0) {
+      neg+1; odd+1;
+    } else if(array[i] > 0 && array[i] % 2 == 0) {
+      pos+1; even+1;
+    } else if(array[i] > 0 && array[i] % 2 != 0) {
+      pos+1; odd+1;
     }
-
-  cout<<"\nNegative numbers are:";
-  for(i=0;i<size;i++){
-    if(arr[i]<0) {
-      cout<<arr[i]<<" ";
-    }
-
-    cout<<"\n\nEven Elements in Array are :: \n\n";
-
-    for(i=0; i<j ;i++) {
-      cout<<" "<<even[i]<<" ";
-    }
-
-    cout<<"\n\nOdd Elements in Array are :: \n\n";
-
-    for(i=0; i<k; i++) {
-      cout<<" "<<odd[i]<<" ";
-    } cout<<"\n";
-
   }
-    return 0;
+
+  // Assign Numbers
+  int arrPos[pos], arrNeg[neg], arrOdd[odd], arrEven[even];
+
+  for(int j = 0; j < sizeof(array)/4; j++) {
+    if(array[j] < 0 && array[j] % 2 == 0) {
+      arrNeg[j] = array[j]; arrEven[j] = array[j];
+    } else if(array[j] < 0 && array[j] % 2 != 0) {
+      arrNeg[j] = array[j]; arrOdd[j] = array[j];
+    } else if(array[j] > 0 && array[j] % 2 == 0) {
+      arrPos[j] = array[j]; arrEven[j] = array[j];
+    } else if(array[j] > 0 && array[j] % 2 != 0) {
+      arrPos[j] = array[j]; arrOdd[j] = array[j];
+    }
+  }
+
+  for(int k = 0; k < sizeof(arrPos)/4 ; k++) {
+    cout  << arrPos[k] << ' ';
+  }
+
+  for(int l = 0; l < sizeof(arrNeg)/4; l++) {
+    cout  << arrNeg[l] << ' ';
+  }
+
+  for(int m = 0; m < sizeof(arrEven)/4; m++) {
+    cout  << arrEven[m] << ' ';
+  }
+
+  for(int n = 0; n < sizeof(arrEven)/4; n++) {
+    cout  << arrOdd[n] << ' ';
+  }
+  return 0;
 }
