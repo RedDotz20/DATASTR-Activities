@@ -1,6 +1,3 @@
-//* CODE BY CARLOS TABANGAY
-//* BSCS-2D
-
 #include <iostream>
 using namespace std;
 
